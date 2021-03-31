@@ -1,9 +1,22 @@
-<h1>Criar Conta</h1>
+{% extends 'base/main.html' %}
+{% block content %}
+<div class="header-bar">
+    <h1>Registrar</h1>
+</div>
 
-<form action="" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Criar">
-</form>
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        <label>{{form.username.label}}</label>
+        {{form.username}}
 
-<p>Não tem uma conta?<a href="{% url 'login' %}">login</a> </p>
+        <label>{{form.password1.label}}</label>
+        {{form.password1}}
+
+        <label>{{form.password2.label}}</label>
+        {{form.password2}}
+        <input style="margin-top:10px ;" class="button" type="submit" value="Register">
+    </form>
+    <p>você já tem uma conta? <a href="{% url 'login' %}">Entrar</a></p>
+</div>
+{% endblock %}
