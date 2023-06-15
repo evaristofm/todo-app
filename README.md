@@ -1,2 +1,1 @@
-# todo-app
-Criando um app de registro de tarefas
+This is my new project
